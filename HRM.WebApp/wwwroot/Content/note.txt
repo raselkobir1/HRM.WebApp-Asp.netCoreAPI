@@ -3,4 +3,4 @@
 CORS (Cross-Origin Resource Sharing) is a mechanism to give or restrict
 access rights to applications from different domains.2.--------------------------ASPNETCORE_ENVIRONMENT Variables----------------------------------We can set the enviroment variable through the command prompt by typing 
 set  ASPNETCORE_ENVIRONMENT=Production in Windows or export 
-set  ASPNET_CORE_ENVIRONMENT=Production in Linux.ASP.NET Core applications use the value of that environment variable to decide which appsettings file to use accordingly.
+set  ASPNET_CORE_ENVIRONMENT=Production in Linux.ASP.NET Core applications use the value of that environment variable to decide which appsettings file to use accordingly.3.---------------------------Logger configure---------------------------------1.NLogger ConfigurationNLog.Extensions.Logging   v 5.0.0-rc2-----------------------------------Use Technology------------------------------------------------------------1.NLogger Configuration

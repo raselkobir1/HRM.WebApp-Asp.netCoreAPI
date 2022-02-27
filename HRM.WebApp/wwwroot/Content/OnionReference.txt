@@ -1,0 +1,17 @@
+﻿How to depent Onion Architecture each others layer:
+-------------------------------------------------
+1.Create API Main project
+	i) Add reference from loggerService project
+	ii) Add reference from Repository project
+
+2.Create Contracts project
+	i) 
+
+3. Create LoggerService project
+	i) Add reference from Contracts project.
+
+4. Create Entities project
+	i)
+
+5. Create Repository project
+	i)  Add reference from Entities project.

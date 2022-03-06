@@ -1,5 +1,5 @@
-﻿How to depent Onion Architecture each others layer:
--------------------------------------------------
+﻿How to depend(Reference) Onion Architecture each others layer:
+--------------------------------------------------------------
 1.Create API Main project
 	i) Add reference from loggerService project
 	ii) Add reference from Repository project

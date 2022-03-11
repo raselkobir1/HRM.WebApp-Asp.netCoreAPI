@@ -13,9 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{8F3DACEB-E21E-4D03-9559-E8EFFF4E2E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{9A2C9CA8-6953-48C4-AA58-238D875EE780}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{9A2C9CA8-6953-48C4-AA58-238D875EE780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{9FC05D5F-8296-4535-A37E-D84CDAF89A7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{9FC05D5F-8296-4535-A37E-D84CDAF89A7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wwwroot", "wwwroot", "{73C5AB4E-A6F7-4222-8A5B-F6C1C1773CB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{44331BEC-A623-4B2D-B5E3-205BD69B48D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{F69A087F-64D8-4EBC-8A17-63941A8E3BC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Styles", "Styles", "{37A16AF4-9FA6-436B-9341-34F38CC87303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +62,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44331BEC-A623-4B2D-B5E3-205BD69B48D4} = {73C5AB4E-A6F7-4222-8A5B-F6C1C1773CB4}
+		{F69A087F-64D8-4EBC-8A17-63941A8E3BC7} = {73C5AB4E-A6F7-4222-8A5B-F6C1C1773CB4}
+		{37A16AF4-9FA6-436B-9341-34F38CC87303} = {73C5AB4E-A6F7-4222-8A5B-F6C1C1773CB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1CEA55D-4361-478E-91C8-DE2650AE372F}

@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal sealed class CompanyService : ICompanyService
+    internal sealed class EmployeeService : IEmployeeService
     {
-        private readonly IRepositoryManager _repositoryManager; 
+        private readonly IRepositoryManager _repositoryManager;
         private readonly ILoggerManager _loggerManager;
-        public CompanyService(IRepositoryManager repositoryManager, ILoggerManager loggerManager)
+        public EmployeeService(IRepositoryManager repositoryManager, ILoggerManager loggerManager)
         {
             _repositoryManager = repositoryManager;
-            _loggerManager = loggerManager;
+            _loggerManager = loggerManager; 
         }
-
     }
 }

@@ -12,8 +12,11 @@ builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureSqlContext(builder.Configuration);
 
-builder.Services.AddControllers();
+
+//builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -31,8 +34,13 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 app.UseCors("corsPolicy");
 
+app.UseRouting();
 app.UseAuthorization();
-
-app.MapControllers();
+//app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapControllerRoute(pattern: "{*url}", name: "public", defaults: new { controller = "Home", action = "Index" });
+});
 
 app.Run();

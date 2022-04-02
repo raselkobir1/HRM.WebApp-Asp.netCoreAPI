@@ -28,4 +28,27 @@ namespace Entities.Models
         public Guid CompanyId { get; set; }
         public Company? Company { get; set; }
     }
+
+    //public class Company
+    //{
+    //    public long Id { get; set; }
+    //    public string Name { get; set; }
+    //    public DateTime CreatedOn { get; set; }
+    //    public DateTime ModifiedOn { get; set; }
+
+    //}
+
+    //public class Employee
+    //{
+    //    public long Id { get; set; }
+    //    public string Name { get; set; }
+    //    public string Email { get; set; }
+    //    public long ManagerId { get; set; } 
+    //    public DateTime CreatedOn { get; set; }
+    //    public DateTime ModifiedOn { get; set; }
+    //    public long CompanyId { get; set; } 
+    //    public long DepartmentId { get; set; } 
+    //    public long DesignationId { get; set; }  
+
+    //}
 }

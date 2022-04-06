@@ -1,3 +1,4 @@
+using Contracts;
 using HRM.WebApp.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
@@ -21,10 +22,12 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// add custom EXCEPTION handling middleware
+var logger = app.Services.GetRequiredService<ILoggerManager>();
+app.ConfigureExceptionHandler(logger);
+
 // Configure the HTTP request pipeline.
-if(app.Environment.IsDevelopment())
-    app.UseDeveloperExceptionPage();
-else
+if(app.Environment.IsProduction())
     app.UseHsts();
 
 app.UseHttpsRedirection();

@@ -10,8 +10,14 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nl
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.AddControllers().AddApplicationPart(typeof(HRM.Presentation.AssemblyReference).Assembly);
+builder.Services.AddAutoMapper(typeof(Program));
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -29,8 +35,30 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 app.UseCors("corsPolicy");
 
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapControllerRoute(pattern: "{*url}", name: "public", defaults: new { controller = "Home", action = "Index" });
+});
+
 app.Run();
+
+
+
+
+
+/* routning two type:
+ * i) Conventional routing.
+ *      app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+        );
+ * ii) Attribute routing.
+        [Route("api/[controller]")] or [Route("api/companies")]
+ 
+   */

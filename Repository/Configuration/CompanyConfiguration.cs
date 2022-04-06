@@ -13,7 +13,8 @@ namespace Repository.Configuration
     {
         public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.HasData(new Company 
+            builder.HasData(
+            new Company 
             {
                 Id = new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"),
                 Name = "IT_Solutions Ltd",

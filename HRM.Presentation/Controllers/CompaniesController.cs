@@ -12,16 +12,23 @@ namespace HRM.Presentation.Controllers
     [ApiController]
     public class CompaniesController : ControllerBase
     {
-        private readonly IServiceManager _service; 
+        private readonly IServiceManager _serviceManager;  
         public CompaniesController(IServiceManager service)
         {
-            _service = service;
+            _serviceManager = service;
         }
         [HttpGet]
         public IActionResult GetCompanies()
         {
-                var companies = _service.CompanyService.GetAllCompanies(trackChanges:false);
+                var companies = _serviceManager.CompanyService.GetAllCompanies(trackChanges:false);
                 return Ok(companies);
+        }
+        // /api/companies/id
+        [HttpGet("{id:guid}")]
+        public IActionResult GetCompany(Guid id)
+        {
+            var company = _serviceManager.CompanyService.GetCompany(id, trackChanges:false);
+            return Ok(company);
         }
     }
 }

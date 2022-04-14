@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRM.Presentation.Controllers
 {
@@ -25,6 +20,12 @@ namespace HRM.Presentation.Controllers
             return Ok(employees);
         }
 
+        [HttpGet("{id:guid}")]
+        public IActionResult GetEmployeeForCompany(Guid companyId, Guid id)
+        {
+           var employee = _serviceManager.EmployeeService.GetEmployee(companyId, id, false);
+            return Ok(employee);
+        }
 
     }
 }

@@ -16,7 +16,15 @@ namespace HRM.Presentation.Controllers
         public EmployeesController(IServiceManager serviceManager)
         {
             _serviceManager = serviceManager; 
-        }  
+        }
+
+        [HttpGet]
+        public IActionResult GetEmployeesForCompany(Guid companyId)
+        {
+            var employees = _serviceManager.EmployeeService.GetEmployees(companyId, trackChanges:false);
+            return Ok(employees);
+        }
+
 
     }
 }
